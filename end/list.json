@@ -1,0 +1,226 @@
+{
+  "goods": [
+    {
+      "id": 1,
+      "name": "小米6",
+      "price": 2,
+      "num": 1
+    },
+    {
+      "id": 2,
+      "name": "红米3",
+      "price": 3,
+      "num": 3
+    },
+    {
+      "id": 3,
+      "name": "小米8",
+      "price": 1,
+      "num": 2
+    }
+  ],
+  "dogs": [
+    {
+      "id": 2,
+      "name": "dog2",
+      "userId": "1"
+    },
+    {
+      "id": 3,
+      "name": "dog3",
+      "userId": "2"
+    },
+    {
+      "id": 4,
+      "name": "dog4",
+      "userId": "2"
+    },
+    {
+      "id": 5,
+      "name": "dog5",
+      "userId": "2"
+    },
+    {
+      "name": "dog2",
+      "age": 1,
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "name": "a",
+      "age": "",
+      "id": 9
+    },
+    {
+      "name": "aa",
+      "age": "",
+      "id": 10
+    },
+    {
+      "name": "aa",
+      "age": "1",
+      "id": 11
+    },
+    {
+      "name": "aa",
+      "age": "12",
+      "id": 12
+    },
+    {
+      "name": "aa",
+      "age": "12",
+      "id": 13
+    },
+    {
+      "name": "a",
+      "age": "",
+      "id": 14
+    },
+    {
+      "name": "aa",
+      "age": "",
+      "id": 15
+    },
+    {
+      "name": "a",
+      "age": "",
+      "id": 16
+    },
+    {
+      "name": "aa",
+      "age": "",
+      "id": 17
+    },
+    {
+      "name": "aa",
+      "age": "",
+      "id": 18
+    },
+    {
+      "name": "",
+      "age": "",
+      "id": 19
+    },
+    {
+      "name": "a",
+      "age": "",
+      "id": 20
+    },
+    {
+      "name": "ao",
+      "age": "",
+      "id": 21
+    },
+    {
+      "name": "aon",
+      "age": "",
+      "id": 22
+    }
+  ],
+  "address": [
+    {
+      "id": 1,
+      "name": "cat1",
+      "img": "./src/assets/pic1.jpg",
+      "userId": "1"
+    },
+    {
+      "id": 2,
+      "name": "cat2",
+      "img": "./src/assets/pic1.jpg",
+      "userId": "1"
+    },
+    {
+      "id": 3,
+      "name": "cat3",
+      "img": "@/assets/pic2.jpg",
+      "userId": "2"
+    },
+    {
+      "id": 4,
+      "name": "cat4",
+      "img": "@/assets/pic3.jpg",
+      "userId": "2"
+    },
+    {
+      "id": 5,
+      "name": "cat5",
+      "img": "@/assets/pic4.jpg",
+      "userId": "2"
+    }
+  ],
+  "find": [
+    {
+      "id": 1,
+      "name": "朋友圈",
+      "img": "./src/assets/pic1.jpg",
+      "userId": "1"
+    },
+    {
+      "id": 2,
+      "name": "扫一扫",
+      "img": "./src/assets/pic1.jpg",
+      "userId": "1"
+    },
+    {
+      "id": 3,
+      "name": "摇一摇",
+      "img": "@/assets/pic2.jpg",
+      "userId": "2"
+    },
+    {
+      "id": 4,
+      "name": "看一看",
+      "img": "@/assets/pic3.jpg",
+      "userId": "2"
+    },
+    {
+      "id": 5,
+      "name": "搜一搜",
+      "img": "@/assets/pic4.jpg",
+      "userId": "2"
+    }
+  ],
+  "me": [
+    {
+      "id": 1,
+      "name": "名字",
+      "img": "./src/assets/pic1.jpg",
+      "userId": "1"
+    },
+    {
+      "id": 2,
+      "name": "钱包",
+      "img": "./src/assets/pic1.jpg",
+      "userId": "1"
+    },
+    {
+      "id": 3,
+      "name": "收藏",
+      "img": "@/assets/pic2.jpg",
+      "userId": "2"
+    },
+    {
+      "id": 4,
+      "name": "相册",
+      "img": "@/assets/pic3.jpg",
+      "userId": "2"
+    },
+    {
+      "id": 5,
+      "name": "卡包",
+      "img": "@/assets/pic4.jpg",
+      "userId": "2"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "user1"
+    },
+    {
+      "id": "2",
+      "name": "user2"
+    }
+  ]
+}
