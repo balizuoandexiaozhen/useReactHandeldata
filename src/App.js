@@ -9,16 +9,17 @@ class App extends Component {
       list: [],
       name: "",
       age: "",
-
+      flag: false
     }
-    this.delete = this.delete.bind(this)
     this.change = this.change.bind(this)
     this.add = this.add.bind(this)
+    this.del = this.del.bind(this)
+    this.modify = this.modify.bind(this)
   }
   componentDidMount() {
-    this.getDate()
+    this.getData()
   }
-  getDate() {
+  getData() {
     axios.get("http://localhost:4000/dogs").then((res) => {
       //console.log(res.data)
       this.setState({
@@ -30,23 +31,28 @@ class App extends Component {
   add() {
     let { name, age } = this.state
     axios.post("http://localhost:4000/dogs", {
-      name: this.state.name,
-      age: this.state.age
+      name,
+      age
     }, {
         "headers": {
           "Content-Type": "application/json"
         }
-      }).then((res) => {
-        console.log(res)
-        // this.setState({
-        //   list: res.data
-        // })
-        // console.log( this.state.list)
+      }).then(() => {
+        this.getData()
 
       })
   }
-  delete() {
-
+  del(id) {
+      console.log(id)
+      axios.delete('http://localhost:4000/dogs/'+id).then(() => {
+        this.getData();
+    })
+  }
+  modify(id,name,age) {
+    console.log(id,name,age)
+    this.setState({
+      flag: !this.state.flag
+    })
   }
   change(e) {
     this.setState({
@@ -58,17 +64,20 @@ class App extends Component {
     let { list } = this.state
     return (
       <div>
-        名字：<input type="text" id="name" value={this.state.name} onKeyUp={this.add} onChange={this.change} />
-        年龄：<input type="text" id="age" value={this.state.age} onKeyUp={this.add} onChange={this.change} />
+        名字：<input type="text" id="name" value={this.state.name} onChange={this.change} />
+        年龄：<input type="text" id="age" value={this.state.age} onChange={this.change} />
         <button onClick={this.add}>添加</button>
         {this.state.name}
+        {this.state.age}
         <ul>
           {
             list.map((item, index) => {
-              return <li key={item.id}>
-                {item.name}
-                <button>删除</button>
-                <button>修改</button>
+              return <li key={item.id} ref={item.id}>
+                宠物名：{item.name}
+                年龄：{item.age}
+                <button onClick={this.del.bind(this,item.id)}>删除</button>
+                <button onClick={this.modify.bind(this,item.id,item.name,item.age)}>修改</button>
+                <input style={{display: this.state.flag?"block":"none"}} type="text" />
               </li>
             })
           }

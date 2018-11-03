@@ -1,120 +1,33 @@
 {
-  "goods": [
-    {
-      "id": 1,
-      "name": "小米6",
-      "price": 2,
-      "num": 1
-    },
-    {
-      "id": 2,
-      "name": "红米3",
-      "price": 3,
-      "num": 3
-    },
-    {
-      "id": 3,
-      "name": "小米8",
-      "price": 1,
-      "num": 2
-    }
-  ],
   "dogs": [
     {
       "id": 2,
       "name": "dog2",
+      "age": 1,
       "userId": "1"
     },
     {
       "id": 3,
+      "age": 1,
       "name": "dog3",
       "userId": "2"
     },
     {
       "id": 4,
       "name": "dog4",
+      "age": 1,
       "userId": "2"
     },
     {
       "id": 5,
       "name": "dog5",
+      "age": 1,
       "userId": "2"
     },
     {
-      "name": "dog2",
-      "age": 1,
-      "userId": 2,
-      "id": 8
-    },
-    {
-      "name": "a",
-      "age": "",
-      "id": 9
-    },
-    {
-      "name": "aa",
-      "age": "",
-      "id": 10
-    },
-    {
-      "name": "aa",
-      "age": "1",
-      "id": 11
-    },
-    {
-      "name": "aa",
+      "name": "dfd",
       "age": "12",
-      "id": 12
-    },
-    {
-      "name": "aa",
-      "age": "12",
-      "id": 13
-    },
-    {
-      "name": "a",
-      "age": "",
-      "id": 14
-    },
-    {
-      "name": "aa",
-      "age": "",
-      "id": 15
-    },
-    {
-      "name": "a",
-      "age": "",
-      "id": 16
-    },
-    {
-      "name": "aa",
-      "age": "",
-      "id": 17
-    },
-    {
-      "name": "aa",
-      "age": "",
-      "id": 18
-    },
-    {
-      "name": "",
-      "age": "",
-      "id": 19
-    },
-    {
-      "name": "a",
-      "age": "",
-      "id": 20
-    },
-    {
-      "name": "ao",
-      "age": "",
-      "id": 21
-    },
-    {
-      "name": "aon",
-      "age": "",
-      "id": 22
+      "id": 6
     }
   ],
   "address": [
