@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import './App.css';
+import List from './components/List'
 
 class App extends Component {
   constructor(props) {
@@ -9,22 +9,27 @@ class App extends Component {
       list: [],
       name: "",
       age: "",
-      flag: false
+      flag: false,
+      query: "",
+      querylist: []
     }
     this.change = this.change.bind(this)
     this.add = this.add.bind(this)
     this.del = this.del.bind(this)
     this.modify = this.modify.bind(this)
+    this.query = this.query.bind(this)
   }
   componentDidMount() {
     this.getData()
+    // this.forceUpdate()
   }
   getData() {
     axios.get("http://localhost:4000/dogs").then((res) => {
-      //console.log(res.data)
+      // console.log(res.data)
       this.setState({
         list: res.data
       })
+      // this.forceUpdate()
 
     })
   }
@@ -39,20 +44,49 @@ class App extends Component {
         }
       }).then(() => {
         this.getData()
-
+        this.setState({
+          name: "",
+          age: ""
+        })
       })
   }
   del(id) {
-      console.log(id)
+      // console.log(id)
       axios.delete('http://localhost:4000/dogs/'+id).then(() => {
-        this.getData();
-    })
+          this.getData();
+      })
   }
   modify(id,name,age) {
-    console.log(id,name,age)
-    this.setState({
-      flag: !this.state.flag
-    })
+    // console.log(id,name,age)
+    axios.patch("http://localhost:4000/dogs/"+id, {
+      name,
+      age
+    }, {
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }).then(() => {
+        this.getData()
+        console.log(this.state.query)
+        this.query()
+      })
+  }
+  query(e) {
+      if(this.state.query === "") {
+        this.setState({
+          querylist: []
+        })
+        return
+      }
+      var list = this.state.list
+      list = list.filter((item,index) => {
+        return item.name.includes(this.state.query)
+      })
+      this.setState({
+        querylist: list
+      })
+
+
   }
   change(e) {
     this.setState({
@@ -61,27 +95,18 @@ class App extends Component {
   }
 
   render() {
-    let { list } = this.state
+    let { list,querylist} = this.state
     return (
       <div>
         名字：<input type="text" id="name" value={this.state.name} onChange={this.change} />
         年龄：<input type="text" id="age" value={this.state.age} onChange={this.change} />
-        <button onClick={this.add}>添加</button>
-        {this.state.name}
-        {this.state.age}
-        <ul>
-          {
-            list.map((item, index) => {
-              return <li key={item.id} ref={item.id}>
-                宠物名：{item.name}
-                年龄：{item.age}
-                <button onClick={this.del.bind(this,item.id)}>删除</button>
-                <button onClick={this.modify.bind(this,item.id,item.name,item.age)}>修改</button>
-                <input style={{display: this.state.flag?"block":"none"}} type="text" />
-              </li>
-            })
-          }
-        </ul>
+        <button onClick={this.add}>添加</button><br/>
+        查找：<input type="text" id="query" value={this.state.query} onKeyUp={this.query} onChange={this.change}/><br/>{this.state.query}
+        查找数据
+        <List list={querylist} del={this.del} modify={this.modify}/>
+        <hr/>
+        全部数据
+        <List list={list} del={this.del} modify={this.modify}/>
       </div>
     );
   }
